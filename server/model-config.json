@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ]
+  },
+  "User": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "postgres",
+    "public": false,
+     "options": {
+      "strictObjectIDCoercion": true
+    }
+
+  },
+  "Role": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "emailDs"
+  },
+  "userinfo": {
+    "dataSource": "postgres",
+    "public": true,
+    "options": {}
+  },
+  "access_token": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "password_reset": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "gym_login": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "gym_working_hours": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "gym_amenities": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "gym_rate_card": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "UserActivity": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "gym_social_media_links": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "customer_details": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "gym_details": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "user_payments": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "tax_rates": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "user_credits": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "workout_logs": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "gym_invites": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "gym_payment_information": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "push_notifications": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "referrals": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "user_referrals": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "offers": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "FBUser": {
+    "dataSource": "postgres",
+    "public": true
+  }
+}

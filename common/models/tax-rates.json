@@ -1,0 +1,39 @@
+{
+  "name": "tax_rates",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tax_rates_id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "tax_rate": {
+      "type": "number",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

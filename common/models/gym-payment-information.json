@@ -1,0 +1,51 @@
+{
+  "name": "gym_payment_information",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "gym_payment_information_id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "gym_details_id": {
+      "type": "number",
+      "required": true
+    },
+    "business_name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "bank_account_number": {
+      "type": "number",
+      "required": true
+    },
+    "routing_number": {
+      "type": "number",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

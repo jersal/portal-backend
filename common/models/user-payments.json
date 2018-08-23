@@ -1,0 +1,57 @@
+{
+  "name": "user_payments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "user_payment_id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "user_id": {
+      "type": "number",
+      "required": true
+    },
+    "gym_details_id": {
+      "type": "number",
+      "required": true
+    },
+    "minutes_purchased": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "tax_collected": {
+      "type": "number",
+      "required": true
+    },
+    "stripe_transaction_id": {
+      "type": "string",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

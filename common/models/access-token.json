@@ -1,0 +1,35 @@
+{
+  "name": "access_token",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "access_token_id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "user_id": {
+      "type": "number",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

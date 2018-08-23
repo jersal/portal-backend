@@ -1,0 +1,43 @@
+{
+  "name": "gym_rate_card",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "gym_rate_card_id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "gym_details_id": {
+      "type": "number",
+      "required": true
+    },
+    "billing_type": {
+      "type": "string",
+      "required": true
+    },
+    "rate": {
+      "type": "number",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

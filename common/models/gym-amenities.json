@@ -1,0 +1,86 @@
+{
+  "name": "gym_amenities",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "gym_amenities_id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "gym_details_id": {
+      "type": "number",
+      "required": true
+    },
+    "amenities": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "prototype.InfoAmenities": {
+      "accepts": [],
+      "returns": [],
+      "description": "To get Amenities Info",
+      "http": [
+        {
+          "path": "AmenitiesInfo",
+          "verb": "get"
+        }
+      ]
+    },
+    "prototype.gym-description": {
+      "accepts": [
+        {
+          "arg": "gym_amenities_id",
+          "type": "number",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "array",
+          "root": false,
+          "description": "description"
+        },
+        {
+          "arg": "amenities",
+          "type": "string",
+          "root": false,
+          "description": "gym_details_id"
+        }
+      ],
+      "description": "to get the description about gym amenities",
+      "http": [
+        {
+          "path": "/description",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "user_credits",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "user_credits_id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "user_id": {
+      "type": "number",
+      "required": true
+    },
+    "gym_details_id": {
+      "type": "number",
+      "required": true
+    },
+    "minutes_remaining": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

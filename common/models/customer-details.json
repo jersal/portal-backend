@@ -1,0 +1,67 @@
+{
+  "name": "customer_details",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "customer_details_id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "user_id": {
+      "type": "number",
+      "required": true
+    },
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "gender": {
+      "type": "string",
+      "required": true
+    },
+    "birthday": {
+      "type": "date",
+      "required": true
+    },
+    "emergency_contact": {
+      "type": "number",
+      "required": true
+    },
+    "phone_number": {
+      "type": "number",
+      "required": true
+    },
+    "profile_picture": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "GeoPoint",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

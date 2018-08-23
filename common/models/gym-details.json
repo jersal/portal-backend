@@ -1,0 +1,51 @@
+{
+  "name": "gym_details",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "gym_details_id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "gym_login_id": {
+      "type": "number",
+      "required": true
+    },
+    "gym_name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "GeoPoint",
+      "required": true
+    },
+    "cover_picture": {
+      "type": "string",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

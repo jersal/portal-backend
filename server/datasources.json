@@ -1,0 +1,89 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "testflexit@gmail.com",
+          "pass": "testflexit123"
+        }
+      }
+    ]
+  },
+  "postgres": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "",
+    "database": "gymportal1",
+    "password": "test123",
+    "name": "postgres",
+    "user": "gireesh",
+    "connector": "postgresql"
+  },
+  "Facebook": {
+    "name": "Facebook",
+    "baseURL": "",
+    "crud": false,
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "https://graph.facebook.com/v2.9/oauth/access_token?client_id={appId}&redirect_uri={redirectUri}&client_secret={appSecret}&code={codeParameter}",
+          "headers": {
+            "accept": "application/json"
+          }
+        },
+        "functions": {
+          "accessToken": [
+            "appId",
+            "appSecret",
+            "redirectUri",
+            "codeParameter"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "https://graph.facebook.com/v2.9/me?access_token={accessToken}",
+          "headers": {
+            "accept": "application/json"
+          }
+        },
+        "functions": {
+          "me": [
+            "accessToken"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "https://graph.facebook.com/v2.9/{userId}?access_token={accessToken}&fields=id,name,picture,first_name,last_name,email",
+          "headers": {
+            "accept": "application/json"
+          }
+        },
+        "functions": {
+          "me": [
+            "userId",
+            "accessToken"
+          ]
+        }
+      }
+    ]
+  }
+}

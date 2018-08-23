@@ -1,0 +1,80 @@
+{
+  "name": "userinfo",
+  "base": "User",
+  "idInjection": true,
+  "forceId": true,
+  "restrictResetPasswordTokenScope": true,
+  "emailVerificationRequired": true,
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "id": true,
+      "generated": true
+    },
+    "email": {
+      "type": "string",
+      "required": false,
+      "index": {
+        "unique": true
+      }
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "facebook_id": {
+      "type": "string",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "dataType": "timestamp",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "logout"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "register"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updatePasswordFromToken"
+    }
+  ],
+  "methods": {}
+}
